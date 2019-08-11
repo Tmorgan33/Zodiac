@@ -79,20 +79,17 @@ var zodiac = [
 function astSign() {
 	console.log("working")
 	
-	var userInput = document.getElementById("your-sign").value.toLowerCase()
-	
 	var sign = document.getElementById("yourSign")
 	var range = document.getElementById("birthdayRange")
 	var attributes = document.getElementById("attributes")
-	var img = document.getElementById("zodiacImage")
-
+	
 	for(i = 0; i < zodiac.length; i++) {
 		if(userInput == zodiac[i].zodiacName) {
 			sign.innerHTML = zodiac[i].zodiacName
 
 			range.innerHTML = zodiac[i].birthdayRange
 			attributes.innerHTML = zodiac[i].attributes
-			img.src = zodiac[i].picture
+		
 			return
 		} else {
 			sign.innerHTML = "oops! That's not a sign. Try again"

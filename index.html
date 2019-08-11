@@ -2,13 +2,16 @@
 <html> 
 <head> 
 <meta charset="utf-8" /> 
-<title>Zodiac Changing Original</title> 
+<meta name="description" content="Find your Sign"/>
+<title>Zodiac</title> 
 <link rel="stylesheet" href="style.css">
-<script src="zodiac.js" type="text/javascript" ></script>
-
+<script src="zodiac.js"></script>
 </head> 
 <body> 
 <h1 id='s_zodiac'>Your Zodiac sign will show here</h1>
+<div>
+  <h1 id="zodiacName"></h1>
+</div>
 
 <h2>Select the month.</h2> 
   Month: <select id='s_m'>
@@ -57,16 +60,34 @@
       <option value='29'>29</option>
       <option value='30'>30</option>
       <option value='31'>31</option>
-    </select> -  <input type='button' id='slct1' value='Submit' /> 
+    </select>
+    <input type='button' id='yoursign' value='Submit' /> 
+   
 <script>
 function zodiac(month, day){ 
-  var zodiac =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn']; 
+  var zodiac =['', 'Zodiac Name Capricorn & Symbol &#9809 Goat, Planet Name Saturn & Symbol &#9796', 
+  'Aquarius', 
+  'Pisces', 
+  'Aries', 
+  'Taurus', 
+  'Gemini', 
+  'Cancer', 
+  'Leo', 
+  'Virgo', 
+  'Libra', 
+  'Scorpio', 
+  'Sagittarius']; 
  var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19]; 
  return (day > last_day[month]) ? zodiac[month*1 + 1] : zodiac[month]; 
 } 
-document.getElementById('slct1').onclick = function(){ 
+document.getElementById('yoursign').onclick = function(){
  document.getElementById('s_zodiac').innerHTML = zodiac(document.getElementById('s_m').value, document.getElementById('s_days').value); 
 }
+
 </script>
+
+<h2 id="attributes">To see basic info about your sign, click the attributes button</h2>
+<input type='button' id='attributes' value='Attributes' /> 
 </body> 
+
 </html>
